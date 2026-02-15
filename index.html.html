@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>श्री महावीर मंदिर, फुसरो | Shri Mahavir Mandir, Phusro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Crimson+Pro:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --saffron: #FF6B35;
+            --deep-orange: #D84315;
+            --gold: #FFB300;
+            --temple-red: #C41E3A;
+            --sacred-yellow: #FFC107;
+            --divine-white: #FFF8E7;
+            --deep-maroon: #7B1E2D;
+            --sandalwood: #F4E4C1;
+            --night-sky: #1A1A2E;
+            --om-blue: #0F4C75;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: linear-gradient(135deg, var(--divine-white) 0%, var(--sandalwood) 100%);
+            color: var(--night-sky);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Decorative Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 107, 53, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 179, 0, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Animated Om Symbol Background */
+        .om-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 600px;
+            color: rgba(255, 107, 53, 0.02);
+            font-family: 'Tiro Devanagari Hindi', serif;
+            pointer-events: none;
+            z-index: -1;
+            animation: pulse-om 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse-om {
+            0%, 100% { opacity: 0.02; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.04; transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(90deg, var(--deep-maroon) 0%, var(--temple-red) 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(123, 30, 45, 0.3);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo h1 {
+            font-family: 'Tiro Devanagari Hindi', serif;
+            color: var(--gold);
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .logo p {
+            color: var(--divine-white);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 179, 0, 0.4); }
+            50% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 179, 0, 0.6); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--divine-white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--divine-white);
+            border: 1px solid var(--gold);
+            padding: 0.4rem 1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--gold);
+            color: var(--deep-maroon);
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--saffron) 0%, var(--deep-orange) 100%);
+            overflow: hidden;
+            padding: 4rem 2rem;
+        }
+
+        .hero::before {
+            content: '🕉️';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            font-size: 400px;
+            opacity: 0.1;
+            animation: rotate-om 30s linear infinite;
+        }
+
+        @keyframes rotate-om {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            animation: fade-in-up 1s ease-out;
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            font-family: 'Tiro Devanagari Hindi', serif;
+            font-size: 4rem;
+            color: var(--divine-white);
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero .chalisa-preview {
+            font-family: 'Tiro Devanagari Hindi', serif;
+            font-size: 1.3rem;
+            color: var(--divine-white);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 179, 0, 0.3);
+            animation: fade-in-up 1s ease-out 0.3s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            animation: fade-in-up 1s ease-out 0.6s both;
+        }
+
+        .cta-btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-primary {
+            background: var(--gold);
+            color: var(--deep-maroon);
+            box-shadow: 0 4px 15px rgba(255, 179, 0, 0.4);
+        }
+
+        .cta-primary:hover {
+            background: var(--sacred-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 179, 0, 0.6);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--divine-white);
+            border: 2px solid var(--divine-white);
+        }
+
+        .cta-secondary:hover {
+            background: var(--divine-white);
+            color: var(--saffron);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--temple-red);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            animation: fade-in-up 0.8s ease-out;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--saffron) 100%);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            animation: fade-in-up 0.6s ease-out both;
+        }
+
+        .service-card:nth-child(2) { animation-delay: 0.1s; }
+        .service-card:nth-child(3) { animation-delay: 0.2s; }
+        .service-card:nth-child(4) { animation-delay: 0.3s; }
+        .service-card:nth-child(5) { animation-delay: 0.4s; }
+        .service-card:nth-child(6) { animation-delay: 0.5s; }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--saffron);
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.3);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .service-card h3 {
+            font-family: 'Tiro Devanagari Hindi', serif;
+            font-size: 1.5rem;
+            color: var(--deep-maroon);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Rituals Section */
+        .rituals-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ritual-item {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 179, 0, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--saffron);
+            transition: all 0.3s ease;
+        }
+
+        .ritual-item:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 5px 20px rgba(255, 107, 53, 0.2);
+        }
+
+        .ritual-item h4 {
+            font-family: 'Tiro Devanagari Hindi', serif;
+            font-size: 1.4rem;
+            color: var(--temple-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .ritual-item .time {
+            color: var(--saffron);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--saffron) 0%, var(--gold) 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item::after {
+            content: '🖼️';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.3;
+        }
+
+        /* Donation Section */
+        .donation-box {
+            background: linear-gradient(135deg, var(--temple-red) 0%, var(--deep-maroon) 100%);
+            padding: 4rem;
+            border-radius: 25px;
+            text-align: center;
+            color: var(--divine-white);
+            box-shadow: 0 10px 40px rgba(123, 30, 45, 0.4);
+        }
+
+        .donation-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .donation-box p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .donation-amounts {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .amount-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid var(--gold);
+            color: var(--divine-white);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .amount-btn:hover {
+            background: var(--gold);
+            color: var(--deep-maroon);
+            transform: scale(1.1);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            font-family: 'Tiro Devanagari Hindi', serif;
+            color: var(--temple-red);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--saffron);
+            min-width: 30px;
+        }
+
+        .map-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 179, 0, 0.1) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--saffron);
+        }
+
+        /* Music Player Section */
+        .music-section {
+            background: linear-gradient(135deg, var(--om-blue) 0%, var(--night-sky) 100%);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            border-radius: 25px;
+            color: var(--divine-white);
+        }
+
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .music-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 179, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .music-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(255, 179, 0, 0.3);
+        }
+
+        .music-card h4 {
+            font-family: 'Tiro Devanagari Hindi', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .play-btn {
+            background: var(--gold);
+            color: var(--deep-maroon);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .play-btn:hover {
+            background: var(--sacred-yellow);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, var(--deep-maroon) 0%, var(--temple-red) 100%);
+            color: var(--divine-white);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--divine-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
+        }
+
+        /* Login Button */
+        .login-btn {
+            background: var(--gold);
+            color: var(--deep-maroon);
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .login-btn:hover {
+            background: var(--sacred-yellow);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero .chalisa-preview {
+                font-size: 1.1rem;
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .services-grid,
+            .rituals-list,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Notification Badge */
+        .notification-badge {
+            background: var(--temple-red);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            text-align: center;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(196, 30, 58, 0); }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--saffron);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            background: var(--deep-orange);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="om-background">ॐ</div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-text">
+                    <h1>🚩 श्री महावीर मंदिर, फुसरो</h1>
+                    <p>Shri Mahavir Mandir, Phusro</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#rituals">Rituals</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#donation">Donation</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLanguage('hindi')">हिन्दी</button>
+                <button class="lang-btn" onclick="setLanguage('english')">English</button>
+                <a href="#login" class="login-btn">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>जय श्री हनुमान</h2>
+            <div class="chalisa-preview">
+                <p>श्री गुरु चरन सरोज रज, निजमन मुकुर सुधारि।</p>
+                <p>बरनऊं रघुबर बिमल जसु, जो दायक फल चारि॥</p>
+                <p style="margin-top: 1rem;">बुद्धिहीन तनु जानिके, सुमिरौं पवन-कुमार।</p>
+                <p>बल बुद्धि विद्या देहु मोहिं, हरहु कलेश विकार॥</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="#donation" class="cta-btn cta-primary">Donate Now</a>
+                <a href="#services" class="cta-btn cta-secondary">Temple Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification -->
+    <div class="notification-badge" id="notification">
+        📢 आज का विशेष: प्रातः आरती 6:00 AM | संध्या आरती 7:00 PM
+    </div>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Temple Services | मंदिर सेवाएं</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🙏</div>
+                <h3>दैनिक पूजा</h3>
+                <p>Daily prayers and rituals performed by experienced priests with full devotion and traditional practices.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔔</div>
+                <h3>आरती सेवा</h3>
+                <p>Morning and evening aarti with traditional bhajans and prasad distribution to all devotees.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📿</div>
+                <h3>विशेष पूजा</h3>
+                <p>Special puja services for occasions like Hanuman Jayanti, Tuesdays, and Saturdays.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌺</div>
+                <h3>प्रसाद सेवा</h3>
+                <p>Pure vegetarian prasad prepared with devotion, distributed to all visitors daily.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📖</div>
+                <h3>पाठ सेवा</h3>
+                <p>Hanuman Chalisa path, Sunderkand path, and other sacred scripture recitations.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎵</div>
+                <h3>भजन संध्या</h3>
+                <p>Regular bhajan and kirtan sessions for spiritual enlightenment and divine connection.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rituals Section -->
+    <section id="rituals">
+        <h2 class="section-title">Daily Rituals | दैनिक कार्यक्रम</h2>
+        <div class="rituals-list">
+            <div class="ritual-item">
+                <h4>प्रातः आरती</h4>
+                <p class="time">⏰ 6:00 AM - 6:30 AM</p>
+                <p>Morning aarti with mangal dhoop and bhog offerings</p>
+            </div>
+            <div class="ritual-item">
+                <h4>श्रृंगार आरती</h4>
+                <p class="time">⏰ 8:00 AM - 8:30 AM</p>
+                <p>Deity decoration and special morning prayers</p>
+            </div>
+            <div class="ritual-item">
+                <h4>मध्याह्न आरती</h4>
+                <p class="time">⏰ 12:00 PM - 12:30 PM</p>
+                <p>Noon prayers and bhog offerings</p>
+            </div>
+            <div class="ritual-item">
+                <h4>संध्या आरती</h4>
+                <p class="time">⏰ 7:00 PM - 7:30 PM</p>
+                <p>Evening aarti with devotional songs and prasad</p>
+            </div>
+            <div class="ritual-item">
+                <h4>शयन आरती</h4>
+                <p class="time">⏰ 9:00 PM - 9:30 PM</p>
+                <p>Night prayers before temple closing</p>
+            </div>
+            <div class="ritual-item">
+                <h4>मंगलवार विशेष</h4>
+                <p class="time">⏰ All Day Special</p>
+                <p>Tuesday special darshan and extended temple hours</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section class="music-section" id="music">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--divine-white);">Divine Music | संगीत सेवा</h2>
+            <div class="music-grid">
+                <div class="music-card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎵</div>
+                    <h4>हनुमान चालीसा</h4>
+                    <p>Complete Hanuman Chalisa with devotional music</p>
+                    <button class="play-btn" onclick="alert('Opening Hanuman Chalisa player...')">▶ Play Now</button>
+                </div>
+                <div class="music-card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📿</div>
+                    <h4>श्रीमद् भागवत गीता</h4>
+                    <p>Sacred verses from the Bhagavad Gita</p>
+                    <button class="play-btn" onclick="alert('Opening Gita player...')">▶ Play Now</button>
+                </div>
+                <div class="music-card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔔</div>
+                    <h4>आरती संग्रह</h4>
+                    <p>Collection of all temple aartis</p>
+                    <button class="play-btn" onclick="alert('Opening Aarti collection...')">▶ Play Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2 class="section-title">Temple Gallery | गैलरी</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; color: #666;">
+            Upload your temple photos by logging into the admin panel
+        </p>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donation">
+        <div class="donation-box">
+            <h3>Support Our Temple | दान करें</h3>
+            <p>Your donations help us serve devotees and maintain this sacred space</p>
+            <div class="donation-amounts">
+                <button class="amount-btn" onclick="donate(101)">₹101</button>
+                <button class="amount-btn" onclick="donate(501)">₹501</button>
+                <button class="amount-btn" onclick="donate(1100)">₹1100</button>
+                <button class="amount-btn" onclick="donate('custom')">Custom Amount</button>
+            </div>
+            <button class="cta-btn cta-primary" style="margin-top: 1rem;" onclick="donate('custom')">
+                Donate Now via UPI
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Us | संपर्क करें</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Temple Address</h3>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <strong>श्री महावीर मंदिर</strong><br>
+                        Phusro, Jharkhand<br>
+                        India
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <strong>Phone:</strong><br>
+                        +91 XXXXX XXXXX
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div>
+                        <strong>Email:</strong><br>
+                        info@mahavirmandirphusro.org
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div>
+                        <strong>Temple Timings:</strong><br>
+                        6:00 AM - 9:30 PM (Daily)
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <h3 style="margin-bottom: 1rem; color: var(--temple-red);">Location Map</h3>
+                <div class="map-placeholder">
+                    🗺️
+                    <div style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.9rem; color: #666;">
+                        Add Google Maps embed code in admin panel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Us | हमारे बारे में</h2>
+        <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); max-width: 900px; margin: 0 auto;">
+            <p style="font-size: 1.2rem; line-height: 2; text-align: justify; color: #333;">
+                श्री महावीर मंदिर, फुसरो एक प्राचीन और पवित्र मंदिर है जो भगवान हनुमान जी को समर्पित है। 
+                यह मंदिर भक्तों के लिए आस्था और शांति का केंद्र है। हम हर दिन प्रातः 6 बजे से रात्रि 9:30 बजे तक 
+                भक्तों की सेवा करते हैं। यहां दैनिक पूजा, आरती, भजन-कीर्तन और विशेष अवसरों पर महापूजा का आयोजन किया जाता है।
+            </p>
+            <p style="font-size: 1.2rem; line-height: 2; text-align: justify; color: #333; margin-top: 1.5rem;">
+                Shri Mahavir Mandir, Phusro is an ancient and sacred temple dedicated to Lord Hanuman. 
+                This temple serves as a center of faith and peace for devotees. We serve devotees daily from 6:00 AM to 9:30 PM. 
+                The temple conducts daily worship, aarti, bhajan-kirtan, and special mahapuja on auspicious occasions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#rituals">Rituals</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#donation">Donation</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+                <a href="#terms">Terms & Conditions</a>
+            </div>
+            <div class="copyright">
+                <p>© 2024 श्री महावीर मंदिर, फुसरो | Shri Mahavir Mandir, Phusro</p>
+                <p style="margin-top: 0.5rem;">Made with 🙏 and devotion</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        ⬆️
+    </div>
+
+    <script>
+        // Language switching
+        function setLanguage(lang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Here you would implement actual language switching
+            alert(`Language switched to ${lang === 'hindi' ? 'हिन्दी' : 'English'}`);
+        }
+
+        // Donation function
+        function donate(amount) {
+            if (amount === 'custom') {
+                const customAmount = prompt('Enter donation amount (₹):');
+                if (customAmount) {
+                    alert(`Thank you for your donation of ₹${customAmount}!\n\nUPI Payment Details:\nUPI ID: temple@upi\nOr scan QR code at temple reception.`);
+                }
+            } else {
+                alert(`Thank you for your donation of ₹${amount}!\n\nUPI Payment Details:\nUPI ID: temple@upi\nOr scan QR code at temple reception.`);
+            }
+        }
+
+        // Scroll to top functionality
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and ritual items
+        document.querySelectorAll('.service-card, .ritual-item, .music-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Update notification periodically
+        const notifications = [
+            '📢 आज का विशेष: प्रातः आरती 6:00 AM | संध्या आरती 7:00 PM',
+            '🙏 मंगलवार विशेष: विस्तारित दर्शन समय और विशेष प्रसाद',
+            '🔔 शनिवार हनुमान पूजा: प्रातः 8:00 AM से शुरू',
+            '📿 चालीसा पाठ: प्रतिदिन दोपहर 12:00 बजे'
+        ];
+
+        let notificationIndex = 0;
+        setInterval(() => {
+            notificationIndex = (notificationIndex + 1) % notifications.length;
+            document.getElementById('notification').textContent = notifications[notificationIndex];
+        }, 5000);
+
+        console.log('🕉️ Welcome to Shri Mahavir Mandir website! 🙏');
+        console.log('जय श्री राम! जय हनुमान!');
+    </script>
+</body>
+</html>
